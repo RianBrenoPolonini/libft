@@ -8,6 +8,6 @@ WORKDIR /app
 
 COPY . /app
 
-RUN gcc -Wall -Wextra -Werror -o tests tests.c -lcriterion
+RUN make tests
 
 CMD ["./tests"]

@@ -1,7 +1,7 @@
-docker build -t tests .
+docker build -t libft_test .
 
 clear
 
-docker run tests
+docker run libft_test
 
-docker rmi tests -f > /dev/null 2>&1
+docker rmi libft_test -f > /dev/null 2>&1
