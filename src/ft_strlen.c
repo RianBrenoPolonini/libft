@@ -6,7 +6,7 @@
 /*   By: rfaria-p <rfaria-p@student.42.rio>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/01 03:30:35 by rfaria-p          #+#    #+#             */
-/*   Updated: 2024/11/01 04:16:43 by rfaria-p         ###   ########.fr       */
+/*   Updated: 2024/11/01 06:20:58 by rfaria-p         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,10 +14,10 @@
 
 size_t	ft_strlen(const char *str)
 {
-	size_t	length;
+	size_t	len;
 
-	length = 0;
+	len = 0;
 	while (*str++)
-		length++;
-	return (length);
+		len++;
+	return (len);
 }
