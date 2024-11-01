@@ -14,8 +14,19 @@ jobs:
     - name: Checkout repository
       uses: actions/checkout@v3
 
+    - name: Cache Docker layers
+      uses: actions/cache@v3
+      with:
+        path: /tmp/.buildx-cache
+        key: ${{ runner.os }}-buildx-${{ github.sha }}
+        restore-keys: |
+          ${{ runner.os }}-buildx-  # Chaves alternativas para restauração do cache
+
+    - name: Set up Docker Buildx
+      uses: docker/setup-buildx-action@v2
+
     - name: Build Docker image
-      run: docker build -t tests .
+      run: docker build --cache-from type=local,src=/tmp/.buildx-cache -t tests .
 
     - name: Run Docker container
       run: docker run tests
