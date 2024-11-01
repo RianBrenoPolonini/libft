@@ -6,9 +6,9 @@ Essas são funções da biblioteca padrão C que você deve recriar com o prefix
 
 - [x] `ft_isalpha` — Verifica se o caractere é alfabético.
 - [x] `ft_isdigit` — Verifica se o caractere é um dígito.
-- [ ] `ft_isalnum` — Verifica se o caractere é alfanumérico.
-- [ ] `ft_isascii` — Verifica se o caractere está no conjunto ASCII.
-- [ ] `ft_isprint` — Verifica se o caractere é imprimível.
+- [x] `ft_isalnum` — Verifica se o caractere é alfanumérico.
+- [x] `ft_isascii` — Verifica se o caractere está no conjunto ASCII.
+- [x] `ft_isprint` — Verifica se o caractere é imprimível.
 - [x] `ft_strlen` — Retorna o comprimento de uma string.
 - [ ] `ft_memset` — Preenche um bloco de memória com um valor constante.
 - [ ] `ft_bzero` — Zera um bloco de memória.
