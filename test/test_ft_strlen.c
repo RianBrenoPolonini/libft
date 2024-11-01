@@ -2,6 +2,14 @@
 #include "libft.h"
 #include <string.h>
 
+Test(ft_strlen, basic_test) {
+    cr_assert_eq(ft_strlen("Hello"), 5, "Expected length of 'Hello' is 5");
+    cr_assert_eq(ft_strlen("World"), 5, "Expected length of 'World' is 5");
+    cr_assert_eq(ft_strlen("Hello, World!"), 13, "Expected length of 'Hello, World!' is 13");
+    cr_assert_eq(ft_strlen(""), 0, "Expected length of '' is 0");
+     cr_assert_eq(ft_strlen("42 Rio"), 6, "Expected length of '42 Rio' is 6");
+}
+
 Test(ft_strlen, empty_string) {
     const char *test = "";
     cr_assert_eq(ft_strlen(test), strlen(test), "Erro: Esperado 0 para uma string vazia, mas obteve %zu", ft_strlen(test));
