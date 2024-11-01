@@ -4,8 +4,8 @@
 
 Essas são funções da biblioteca padrão C que você deve recriar com o prefixo `ft_`:
 
-- [ ] `ft_isalpha` — Verifica se o caractere é alfabético.
-- [ ] `ft_isdigit` — Verifica se o caractere é um dígito.
+- [x] `ft_isalpha` — Verifica se o caractere é alfabético.
+- [x] `ft_isdigit` — Verifica se o caractere é um dígito.
 - [ ] `ft_isalnum` — Verifica se o caractere é alfanumérico.
 - [ ] `ft_isascii` — Verifica se o caractere está no conjunto ASCII.
 - [ ] `ft_isprint` — Verifica se o caractere é imprimível.
