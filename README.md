@@ -10,8 +10,8 @@ Essas são funções da biblioteca padrão C que você deve recriar com o prefix
 - [x] `ft_isascii` — Verifica se o caractere está no conjunto ASCII.
 - [x] `ft_isprint` — Verifica se o caractere é imprimível.
 - [x] `ft_strlen` — Retorna o comprimento de uma string.
-- [ ] `ft_memset` — Preenche um bloco de memória com um valor constante.
-- [ ] `ft_bzero` — Zera um bloco de memória.
+- [x] `ft_memset` — Preenche um bloco de memória com um valor constante.
+- [x] `ft_bzero` — Zera um bloco de memória.
 - [ ] `ft_memcpy` — Copia blocos de memória.
 - [ ] `ft_memmove` — Move blocos de memória, lidando com sobreposição.
 - [ ] `ft_strlcpy` — Copia uma string para um buffer com limite de tamanho.
