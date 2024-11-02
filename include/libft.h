@@ -6,7 +6,7 @@
 /*   By: rfaria-p <rfaria-p@student.42.rio>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/01 03:51:53 by rfaria-p          #+#    #+#             */
-/*   Updated: 2024/11/02 12:10:18 by rfaria-p         ###   ########.fr       */
+/*   Updated: 2024/11/02 12:37:28 by rfaria-p         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,6 +17,7 @@
 # include <unistd.h>
 
 size_t	ft_strlen(const char *str);
+size_t ft_strlcpy(char *dst, const char *src, size_t dsize);
 
 int ft_isalpha(int c);
 int	ft_isdigit(int c);
