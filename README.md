@@ -14,7 +14,7 @@ Essas são funções da biblioteca padrão C que você deve recriar com o prefix
 - [x] `ft_bzero` — Zera um bloco de memória.
 - [x] `ft_memcpy` — Copia blocos de memória.
 - [x] `ft_memmove` — Move blocos de memória, lidando com sobreposição.
-- [ ] `ft_strlcpy` — Copia uma string para um buffer com limite de tamanho.
+- [x] `ft_strlcpy` — Copia uma string para um buffer com limite de tamanho.
 - [ ] `ft_strlcat` — Concatena strings com limite de tamanho do buffer.
 - [ ] `ft_toupper` — Converte caractere para maiúscula.
 - [ ] `ft_tolower` — Converte caractere para minúscula.

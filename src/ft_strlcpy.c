@@ -6,7 +6,7 @@
 /*   By: rfaria-p <rfaria-p@student.42.rio>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/02 12:33:28 by rfaria-p          #+#    #+#             */
-/*   Updated: 2024/11/02 12:43:09 by rfaria-p         ###   ########.fr       */
+/*   Updated: 2024/11/03 07:56:09 by rfaria-p         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,5 +25,5 @@ size_t	ft_strlcpy(char *dst, const char *src, size_t dsize)
 		i++;
 	}
 	dst[i] = '\0';
-	return (i);
+	return (ft_strlen(src));
 }
