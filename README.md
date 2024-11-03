@@ -16,8 +16,8 @@ Essas são funções da biblioteca padrão C que você deve recriar com o prefix
 - [x] `ft_memmove` — Move blocos de memória, lidando com sobreposição.
 - [x] `ft_strlcpy` — Copia uma string para um buffer com limite de tamanho.
 - [x] `ft_strlcat` — Concatena strings com limite de tamanho do buffer.
-- [ ] `ft_toupper` — Converte caractere para maiúscula.
-- [ ] `ft_tolower` — Converte caractere para minúscula.
+- [x] `ft_toupper` — Converte caractere para maiúscula.
+- [x] `ft_tolower` — Converte caractere para minúscula.
 - [ ] `ft_strchr` — Localiza um caractere em uma string.
 - [ ] `ft_strrchr` — Localiza a última ocorrência de um caractere em uma string.
 - [ ] `ft_strncmp` — Compara duas strings até um certo número de caracteres.
