@@ -1,6 +1,6 @@
 docker build -t libft_test .
 
-clear
+# clear
 
 norminette -R CheckForbiddenSourceHeader ./src ./include
 echo "\n\n"

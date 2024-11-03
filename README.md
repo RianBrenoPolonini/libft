@@ -19,8 +19,8 @@ Essas são funções da biblioteca padrão C que você deve recriar com o prefix
 - [X] `ft_toupper` — Converte caractere para maiúscula.
 - [X] `ft_tolower` — Converte caractere para minúscula.
 - [X] `ft_strchr` — Localiza um caractere em uma string.
-- [ ] `ft_strrchr` — Localiza a última ocorrência de um caractere em uma string.
-- [ ] `ft_strncmp` — Compara duas strings até um certo número de caracteres.
+- [X] `ft_strrchr` — Localiza a última ocorrência de um caractere em uma string.
+- [X] `ft_strncmp` — Compara duas strings até um certo número de caracteres.
 - [ ] `ft_memchr` — Pesquisa um valor em um bloco de memória.
 - [ ] `ft_memcmp` — Compara blocos de memória.
 - [ ] `ft_strnstr` — Localiza uma substring dentro de outra, com limite de tamanho.
