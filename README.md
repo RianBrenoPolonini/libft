@@ -4,21 +4,21 @@
 
 Essas são funções da biblioteca padrão C que você deve recriar com o prefixo `ft_`:
 
-- [x] `ft_isalpha` — Verifica se o caractere é alfabético.
-- [x] `ft_isdigit` — Verifica se o caractere é um dígito.
-- [x] `ft_isalnum` — Verifica se o caractere é alfanumérico.
-- [x] `ft_isascii` — Verifica se o caractere está no conjunto ASCII.
-- [x] `ft_isprint` — Verifica se o caractere é imprimível.
-- [x] `ft_strlen` — Retorna o comprimento de uma string.
-- [x] `ft_memset` — Preenche um bloco de memória com um valor constante.
-- [x] `ft_bzero` — Zera um bloco de memória.
-- [x] `ft_memcpy` — Copia blocos de memória.
-- [x] `ft_memmove` — Move blocos de memória, lidando com sobreposição.
-- [x] `ft_strlcpy` — Copia uma string para um buffer com limite de tamanho.
-- [x] `ft_strlcat` — Concatena strings com limite de tamanho do buffer.
-- [x] `ft_toupper` — Converte caractere para maiúscula.
-- [x] `ft_tolower` — Converte caractere para minúscula.
-- [ ] `ft_strchr` — Localiza um caractere em uma string.
+- [X] `ft_isalpha` — Verifica se o caractere é alfabético.
+- [X] `ft_isdigit` — Verifica se o caractere é um dígito.
+- [X] `ft_isalnum` — Verifica se o caractere é alfanumérico.
+- [X] `ft_isascii` — Verifica se o caractere está no conjunto ASCII.
+- [X] `ft_isprint` — Verifica se o caractere é imprimível.
+- [X] `ft_strlen` — Retorna o comprimento de uma string.
+- [X] `ft_memset` — Preenche um bloco de memória com um valor constante.
+- [X] `ft_bzero` — Zera um bloco de memória.
+- [X] `ft_memcpy` — Copia blocos de memória.
+- [X] `ft_memmove` — Move blocos de memória, lidando com sobreposição.
+- [X] `ft_strlcpy` — Copia uma string para um buffer com limite de tamanho.
+- [X] `ft_strlcat` — Concatena strings com limite de tamanho do buffer.
+- [X] `ft_toupper` — Converte caractere para maiúscula.
+- [X] `ft_tolower` — Converte caractere para minúscula.
+- [X] `ft_strchr` — Localiza um caractere em uma string.
 - [ ] `ft_strrchr` — Localiza a última ocorrência de um caractere em uma string.
 - [ ] `ft_strncmp` — Compara duas strings até um certo número de caracteres.
 - [ ] `ft_memchr` — Pesquisa um valor em um bloco de memória.
