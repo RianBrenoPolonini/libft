@@ -6,7 +6,7 @@
 /*   By: rfaria-p <rfaria-p@student.42.rio>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/01 03:51:53 by rfaria-p          #+#    #+#             */
-/*   Updated: 2024/11/03 09:24:45 by rfaria-p         ###   ########.fr       */
+/*   Updated: 2024/11/03 11:11:26 by rfaria-p         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -36,5 +36,6 @@ void	*ft_memset(void *s, int c, size_t n);
 void	ft_bzero(void *s, size_t n);
 void	*ft_memcpy(void *dst, const void *src, size_t n);
 void	*ft_memmove(void *dst, const void *src, size_t n);
+void	*ft_memchr(const void *s, int c, size_t n);
 
 #endif
