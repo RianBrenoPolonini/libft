@@ -6,7 +6,7 @@
 /*   By: rfaria-p <rfaria-p@student.42.rio>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/03 09:01:27 by rfaria-p          #+#    #+#             */
-/*   Updated: 2024/11/03 10:32:48 by rfaria-p         ###   ########.fr       */
+/*   Updated: 2024/11/03 10:36:46 by rfaria-p         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,9 +14,9 @@
 
 char	*ft_strrchr(const char *s, int c)
 {
-	char target;
+	char	target;
 	char	*last_occurrence;
-	
+
 	target = (char)c;
 	last_occurrence = NULL;
 	while (*s)

@@ -6,7 +6,7 @@
 /*   By: rfaria-p <rfaria-p@student.42.rio>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/03 08:43:21 by rfaria-p          #+#    #+#             */
-/*   Updated: 2024/11/03 10:28:00 by rfaria-p         ###   ########.fr       */
+/*   Updated: 2024/11/03 10:36:37 by rfaria-p         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,7 +14,7 @@
 
 char	*ft_strchr(const char *s, int c)
 {
-	char target;
+	char	target;
 
 	target = (char)c;
 	while (*s)
