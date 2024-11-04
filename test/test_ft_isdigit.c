@@ -6,7 +6,7 @@
 /*   By: rfaria-p <rfaria-p@student.42.rio>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/01 05:37:45 by rfaria-p          #+#    #+#             */
-/*   Updated: 2024/11/01 05:42:12 by rfaria-p         ###   ########.fr       */
+/*   Updated: 2024/11/04 07:39:42 by rfaria-p         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,13 +15,28 @@
 #include <ctype.h>
 
 Test(ft_isdigit, basic_tests) {
-    cr_assert(ft_isdigit('0') == 1);
-    cr_assert(ft_isdigit('5') == 1);
-    cr_assert(ft_isdigit('9') == 1);
-    cr_assert(ft_isdigit('a') == 0);
-    cr_assert(ft_isdigit('Z') == 0);
-    cr_assert(ft_isdigit(' ') == 0);
-    cr_assert(ft_isdigit('!') == 0);
+    cr_assert_eq(ft_isdigit('0'), 1, "Erro: '0' deveria ser considerado um dígito.");
+    cr_assert_eq(ft_isdigit('5'), 1, "Erro: '5' deveria ser considerado um dígito.");
+    cr_assert_eq(ft_isdigit('9'), 1, "Erro: '9' deveria ser considerado um dígito.");
+
+    cr_assert_eq(ft_isdigit('a'), 0, "Erro: 'a' não deveria ser considerado um dígito.");
+    cr_assert_eq(ft_isdigit('Z'), 0, "Erro: 'Z' não deveria ser considerado um dígito.");
+    cr_assert_eq(ft_isdigit('!'), 0, "Erro: '!' não deveria ser considerado um dígito.");
+    cr_assert_eq(ft_isdigit(' '), 0, "Erro: espaço não deveria ser considerado um dígito.");
+}
+
+Test(ft_isdigit, extended_tests) {
+    cr_assert_eq(ft_isdigit(-1), 0, "Erro: -1 não deveria ser considerado um dígito.");
+    cr_assert_eq(ft_isdigit(10), 0, "Erro: 10 não deveria ser considerado um dígito.");
+    cr_assert_eq(ft_isdigit(57), 1, "Erro: 57 (código ASCII de '9') deveria ser considerado um dígito.");
+    cr_assert_eq(ft_isdigit(58), 0, "Erro: 58 não deveria ser considerado um dígito.");
+}
+
+Test(ft_isdigit, edge_cases) {
+    cr_assert_eq(ft_isdigit('0'), 1, "Erro: '0' deveria ser considerado um dígito.");
+    cr_assert_eq(ft_isdigit('9'), 1, "Erro: '9' deveria ser considerado um dígito.");
+    cr_assert_eq(ft_isdigit('A'), 0, "Erro: 'A' não deveria ser considerado um dígito.");
+    cr_assert_eq(ft_isdigit('a'), 0, "Erro: 'a' não deveria ser considerado um dígito.");
 }
 
 Test(ft_isdigit, lib_tests) {

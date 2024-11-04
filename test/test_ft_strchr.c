@@ -6,7 +6,7 @@
 /*   By: rfaria-p <rfaria-p@student.42.rio>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/03 08:51:52 by rfaria-p          #+#    #+#             */
-/*   Updated: 2024/11/03 08:58:06 by rfaria-p         ###   ########.fr       */
+/*   Updated: 2024/11/04 08:21:12 by rfaria-p         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,34 +14,42 @@
 #include "libft.h"
 #include <string.h>
 
-Test(ft_strchr, basic_tests) {
-		char str[10] = "abcdefghi";
-		cr_assert_str_eq(ft_strchr(str, 'a'), "abcdefghi", "Erro: Esperado 'abcdefghi', mas obteve '%s'", ft_strchr(str, 'a'));
-		cr_assert_str_eq(ft_strchr(str, 'b'), "bcdefghi", "Erro: Esperado 'bcdefghi', mas obteve '%s'", ft_strchr(str, 'b'));
-		cr_assert_str_eq(ft_strchr(str, 'c'), "cdefghi", "Erro: Esperado 'cdefghi', mas obteve '%s'", ft_strchr(str, 'c'));
-		cr_assert_str_eq(ft_strchr(str, 'd'), "defghi", "Erro: Esperado 'defghi', mas obteve '%s'", ft_strchr(str, 'd'));
-		cr_assert_str_eq(ft_strchr(str, 'e'), "efghi", "Erro: Esperado 'efghi', mas obteve '%s'", ft_strchr(str, 'e'));
-		cr_assert_str_eq(ft_strchr(str, 'f'), "fghi", "Erro: Esperado 'fghi', mas obteve '%s'", ft_strchr(str, 'f'));
-		cr_assert_str_eq(ft_strchr(str, 'g'), "ghi", "Erro: Esperado 'ghi', mas obteve '%s'", ft_strchr(str, 'g'));
-		cr_assert_str_eq(ft_strchr(str, 'h'), "hi", "Erro: Esperado 'hi', mas obteve '%s'", ft_strchr(str, 'h'));
-		cr_assert_str_eq(ft_strchr(str, 'i'), "i", "Erro: Esperado 'i', mas obteve '%s'", ft_strchr(str, 'i'));
-		cr_assert_null(ft_strchr(str, 'j'), "Erro: Esperado NULL, mas obteve '%s'", ft_strchr(str, 'j'));
+Test(ft_strchr, basic_usage) {
+    const char *str = "Hello World!";
+
+    cr_assert_eq(ft_strchr(str, 'W'), strchr(str, 'W'), 
+                 "Erro: Esperado ponteiro para '%s', mas obteve ponteiro para '%s'.", strchr(str, 'W'), ft_strchr(str, 'W'));
+
+    cr_assert_eq(ft_strchr(str, 'H'), strchr(str, 'H'), 
+                 "Erro: Esperado ponteiro para '%s', mas obteve ponteiro para '%s'.", strchr(str, 'H'), ft_strchr(str, 'H'));
+
+    cr_assert_eq(ft_strchr(str, '!'), strchr(str, '!'), 
+                 "Erro: Esperado ponteiro para '%s', mas obteve ponteiro para '%s'.", strchr(str, '!'), ft_strchr(str, '!'));
 }
 
-Test(ft_strchr, lib_tests) {
-    char buffer1[10] = "abcdefghi";
-    char buffer2[10] = "abcdefghi";
-    for (int i = 0; i < 256; i++) {
-        char *result_ft = ft_strchr(buffer1, i);
-        char *result_lib = strchr(buffer2, i);
-        
-        if (result_ft == NULL || result_lib == NULL) {
-            cr_assert_null(result_ft, "Erro: Esperado NULL para o caractere %c, mas obteve '%s'", i, result_ft);
-            cr_assert_null(result_lib, "Erro: Esperado NULL para o caractere %c, mas obteve '%s'", i, result_lib);
-        } else {
-            cr_assert_str_eq(result_ft, result_lib, 
-                             "Erro: Esperado '%s' para o caractere %c, mas obteve '%s'", 
-                             result_lib, i, result_ft);
-        }
-    }
+Test(ft_strchr, null_terminator) {
+    const char *str = "Hello World!";
+
+    cr_assert_eq(ft_strchr(str, '\0'), strchr(str, '\0'), 
+                 "Erro: Esperado ponteiro para o terminador nulo, mas obteve ponteiro para '%s'.", ft_strchr(str, '\0'));
+}
+
+Test(ft_strchr, character_not_found) {
+    const char *str = "Hello World!";
+
+    cr_assert_null(ft_strchr(str, 'x'), "Erro: Esperado NULL para caractere inexistente.");
+}
+
+Test(ft_strchr, empty_string) {
+    const char *str = "";
+
+    cr_assert_null(ft_strchr(str, 'a'), "Erro: Esperado NULL para string vazia com caractere não encontrado.");
+    cr_assert_eq(ft_strchr(str, '\0'), str, "Erro: Esperado ponteiro para o terminador nulo na string vazia.");
+}
+
+Test(ft_strchr, multiple_occurrences) {
+    const char *str = "banana";
+
+    cr_assert_eq(ft_strchr(str, 'a'), strchr(str, 'a'), 
+                 "Erro: Esperado ponteiro para a primeira ocorrência de 'a', mas obteve ponteiro para '%s'.", ft_strchr(str, 'a'));
 }

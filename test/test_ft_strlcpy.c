@@ -6,7 +6,7 @@
 /*   By: rfaria-p <rfaria-p@student.42.rio>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/02 12:42:28 by rfaria-p          #+#    #+#             */
-/*   Updated: 2024/11/03 08:02:08 by rfaria-p         ###   ########.fr       */
+/*   Updated: 2024/11/04 08:20:15 by rfaria-p         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,36 +14,74 @@
 #include "libft.h"
 #include <string.h>
 
-Test(ft_strlcpy, basic_tests) {
-    char str[10] = "abcdefghi";
-    char str2[10] = "123456789";
+Test(ft_strlcpy, basic_copy) {
+    char dest[20];
+    const char *src = "Hello, World!";
+
+    size_t expected = strlcpy(dest, src, sizeof(dest));
+    char dest_copy[20];
+    size_t result = ft_strlcpy(dest_copy, src, sizeof(dest_copy));
     
-    ft_strlcpy(str, str2, 5);
-    cr_assert_str_eq(str, "1234", "Erro: Esperado '1234', mas obteve '%s'", str);
-    
-    char buffer[10] = "abcdefghi";
-    ft_strlcpy(buffer, str2, 10);
-    cr_assert_str_eq(buffer, "123456789", "Erro: Esperado '123456789', mas obteve '%s'", buffer);
-    
-    char buffer2[10] = "abcdefghi";
-    ft_strlcpy(buffer2, str2, 9);
-    cr_assert_str_eq(buffer2, "12345678", "Erro: Esperado '12345678', mas obteve '%s'", buffer2);
-    
-    char empty_buffer[10] = "abcdefghi";
-    size_t result = ft_strlcpy(empty_buffer, str2, 0);
-    cr_assert_eq(result, 9, "Erro: Esperado 9 para o comprimento de 'src' quando dsize é 0, mas obteve %zu", result);
-    cr_assert_str_eq(empty_buffer, "abcdefghi", "Erro: O buffer deve permanecer inalterado quando dsize é 0");
+    cr_assert_eq(result, expected, "Erro: Esperado %zu, mas obteve %zu", expected, result);
+    cr_assert_str_eq(dest_copy, dest, "Erro: String esperada '%s', mas obteve '%s'", dest, dest_copy);
 }
 
-Test(ft_strlcpy, lib_tests) {
-    char buffer1[10] = {0};
-    char buffer2[10] = {0};
+Test(ft_strlcpy, buffer_smaller_than_source) {
+    char dest[5];
+    const char *src = "Hello, World!";
 
-    ft_strlcpy(buffer1, "1234567890", 10);
-    strlcpy(buffer2, "1234567890", 10);
-    cr_assert_str_eq(buffer1, buffer2, "Erro: Os buffers deveriam ser iguais após strlcpy");
+    size_t expected = strlcpy(dest, src, sizeof(dest));
+    char dest_copy[5];
+    size_t result = ft_strlcpy(dest_copy, src, sizeof(dest_copy));
+    
+    cr_assert_eq(result, expected, "Erro: Esperado %zu, mas obteve %zu", expected, result);
+    cr_assert_str_eq(dest_copy, dest, "Erro: String esperada '%s', mas obteve '%s'", dest, dest_copy);
+}
 
-    char buffer3[10] = {0};
-    ft_strlcpy(buffer3, "1234567890", 5);
-    cr_assert_str_eq(buffer3, "1234", "Erro: Esperado '1234', mas obteve '%s'", buffer3);
+Test(ft_strlcpy, exact_buffer_size) {
+    char dest[6];
+    const char *src = "Hello";
+
+    size_t expected = strlcpy(dest, src, sizeof(dest));
+    char dest_copy[6];
+    size_t result = ft_strlcpy(dest_copy, src, sizeof(dest_copy));
+    
+    cr_assert_eq(result, expected, "Erro: Esperado %zu, mas obteve %zu", expected, result);
+    cr_assert_str_eq(dest_copy, dest, "Erro: String esperada '%s', mas obteve '%s'", dest, dest_copy);
+}
+
+Test(ft_strlcpy, empty_source_string) {
+    char dest[10] = "Initial";
+    const char *src = "";
+
+    size_t expected = strlcpy(dest, src, sizeof(dest));
+    char dest_copy[10] = "Initial";
+    size_t result = ft_strlcpy(dest_copy, src, sizeof(dest_copy));
+    
+    cr_assert_eq(result, expected, "Erro: Esperado %zu, mas obteve %zu", expected, result);
+    cr_assert_str_eq(dest_copy, dest, "Erro: String esperada '%s', mas obteve '%s'", dest, dest_copy);
+}
+
+Test(ft_strlcpy, zero_buffer_size) {
+    char dest[20] = "Initial";
+    const char *src = "Hello, World!";
+
+    size_t expected = strlcpy(dest, src, 0);
+    char dest_copy[20] = "Initial";
+    size_t result = ft_strlcpy(dest_copy, src, 0);
+    
+    cr_assert_eq(result, expected, "Erro: Esperado %zu, mas obteve %zu", expected, result);
+    cr_assert_str_eq(dest_copy, dest, "Erro: String esperada '%s', mas obteve '%s'", dest, dest_copy);
+}
+
+Test(ft_strlcpy, large_source_string) {
+    char dest[10];
+    const char *src = "This is a very large source string";
+
+    size_t expected = strlcpy(dest, src, sizeof(dest));
+    char dest_copy[10];
+    size_t result = ft_strlcpy(dest_copy, src, sizeof(dest_copy));
+    
+    cr_assert_eq(result, expected, "Erro: Esperado %zu, mas obteve %zu", expected, result);
+    cr_assert_str_eq(dest_copy, dest, "Erro: String esperada '%s', mas obteve '%s'", dest, dest_copy);
 }

@@ -6,7 +6,7 @@
 /*   By: rfaria-p <rfaria-p@student.42.rio>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/04 07:29:59 by rfaria-p          #+#    #+#             */
-/*   Updated: 2024/11/04 07:30:43 by rfaria-p         ###   ########.fr       */
+/*   Updated: 2024/11/04 08:12:19 by rfaria-p         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -61,4 +61,15 @@ Test(ft_strdup, identical_strings) {
 
     free(dup1);
     free(dup2);
+}
+
+Test(ft_strdup, lib_tests) {
+		const char *str = "Hello World!";
+		char *dup = ft_strdup(str);
+		char *lib_dup = strdup(str);
+		
+		cr_assert_str_eq(dup, lib_dup, "Erro: A string duplicada não é igual à original.");
+		
+		free(dup);
+		free(lib_dup);
 }

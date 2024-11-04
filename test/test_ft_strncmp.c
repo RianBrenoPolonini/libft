@@ -6,7 +6,7 @@
 /*   By: rfaria-p <rfaria-p@student.42.rio>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/03 09:22:52 by rfaria-p          #+#    #+#             */
-/*   Updated: 2024/11/03 09:46:40 by rfaria-p         ###   ########.fr       */
+/*   Updated: 2024/11/04 08:19:53 by rfaria-p         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,28 +14,72 @@
 #include "libft.h"
 #include <string.h>
 
-Test(ft_strncmp, basic_tests) {
-    cr_assert_eq(ft_strncmp("abcdef", "abcdef", 6), 0, "Erro: Esperado 0 para 'abcdef' e 'abcdef'");
-    cr_assert_gt(ft_strncmp("abcdef", "abcde", 6), 0, "Erro: Esperado um valor positivo para 'abcdef' e 'abcde'");
-    cr_assert_eq(ft_strncmp("abc", "abcdef", 3), 0, "Erro: Esperado 0 para 'abc' e 'abcdef' (comparando 3 caracteres)");
-    cr_assert_eq(ft_strncmp("abcdef", "abc", 3), 0, "Erro: Esperado 0 para 'abcdef' e 'abc' (comparando 3 caracteres)");
-    cr_assert_eq(ft_strncmp("", "abc", 3), strncmp("", "abc", 3), "Erro: Esperado -1 para '' e 'abc'");
-    cr_assert_eq(ft_strncmp("abc", "", 3), strncmp("abc", "", 3), "Erro: Esperado 1 para 'abc' e ''");
-    cr_assert_eq(ft_strncmp("abc", "abc", 0), 0, "Erro: Esperado 0 para 'abc' e 'abc' com n = 0");
-    cr_assert_eq(ft_strncmp("abcdef", "abcdeg", 3), 0, "Erro: Esperado 0 para 'abcdef' e 'abcdeg' (comparando 3 caracteres)");
-    cr_assert_eq(ft_strncmp("abc", "ABc", 3), strncmp("abc", "ABc", 3), "Erro: Esperado -1 para 'abc' e 'ABc' (case sensitive)");
-    cr_assert_eq(ft_strncmp("ABC", "abc", 3), strncmp("ABC", "abc", 3), "Erro: Esperado 1 para 'ABC' e 'abc' (case sensitive)");
+Test(ft_strncmp, equal_strings) {
+    const char *s1 = "Hello, World!";
+    const char *s2 = "Hello, World!";
+
+    int expected = strncmp(s1, s2, 13);
+    int result = ft_strncmp(s1, s2, 13);
+
+    cr_assert_eq(result, expected, "Erro: Esperado %d, mas obteve %d", expected, result);
 }
 
-Test(ft_strncmp, lib_tests) {
-		char buffer1[10] = "abcdefghi";
-		char buffer2[10] = "abcdefghi";
-		for (int i = 0; i < 256; i++) {
-				int result_ft = ft_strncmp(buffer1, buffer2, i);
-				int result_lib = strncmp(buffer1, buffer2, i);
-				
-				cr_assert_eq(result_ft, result_lib, 
-										 "Erro: Esperado %d para a comparação de 'abcdefghi' e 'abcdefghi' com n = %d, mas obteve %d", 
-										 result_lib, i, result_ft);
-		}
+Test(ft_strncmp, different_strings) {
+    const char *s1 = "Hello, World!";
+    const char *s2 = "Hello, Universe!";
+
+    int expected = strncmp(s1, s2, 13);
+    int result = ft_strncmp(s1, s2, 13);
+
+    cr_assert_eq(result, expected, "Erro: Esperado %d, mas obteve %d", expected, result);
+}
+
+Test(ft_strncmp, limit_smaller_than_difference) {
+    const char *s1 = "Hello, World!";
+    const char *s2 = "Hello, Universe!";
+
+    int expected = strncmp(s1, s2, 7);
+    int result = ft_strncmp(s1, s2, 7);
+
+    cr_assert_eq(result, expected, "Erro: Esperado %d, mas obteve %d", expected, result);
+}
+
+Test(ft_strncmp, zero_length) {
+    const char *s1 = "Hello, World!";
+    const char *s2 = "Hello, Universe!";
+
+    int expected = strncmp(s1, s2, 0);
+    int result = ft_strncmp(s1, s2, 0);
+
+    cr_assert_eq(result, expected, "Erro: Esperado %d, mas obteve %d", expected, result);
+}
+
+Test(ft_strncmp, partial_match) {
+    const char *s1 = "Hello";
+    const char *s2 = "Hello, World!";
+
+    int expected = strncmp(s1, s2, 5);
+    int result = ft_strncmp(s1, s2, 5);
+
+    cr_assert_eq(result, expected, "Erro: Esperado %d, mas obteve %d", expected, result);
+}
+
+Test(ft_strncmp, empty_string_comparison) {
+    const char *s1 = "";
+    const char *s2 = "Hello";
+
+    int expected = strncmp(s1, s2, 5);
+    int result = ft_strncmp(s1, s2, 5);
+
+    cr_assert_eq(result, expected, "Erro: Esperado %d, mas obteve %d", expected, result);
+}
+
+Test(ft_strncmp, both_empty_strings) {
+    const char *s1 = "";
+    const char *s2 = "";
+
+    int expected = strncmp(s1, s2, 5);
+    int result = ft_strncmp(s1, s2, 5);
+
+    cr_assert_eq(result, expected, "Erro: Esperado %d, mas obteve %d", expected, result);
 }

@@ -6,12 +6,13 @@
 /*   By: rfaria-p <rfaria-p@student.42.rio>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/04 07:08:29 by rfaria-p          #+#    #+#             */
-/*   Updated: 2024/11/04 07:16:10 by rfaria-p         ###   ########.fr       */
+/*   Updated: 2024/11/04 08:24:46 by rfaria-p         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include <criterion/criterion.h>
 #include "libft.h"
+#include <stdio.h>
 
 Test(ft_atoi, basic_tests) {
     cr_assert_eq(ft_atoi("42"), 42, "Erro: Esperado 42, mas obteve %d", ft_atoi("42"));
@@ -60,3 +61,11 @@ Test(ft_atoi, only_whitespace) {
 		cr_assert_eq(ft_atoi("   "), 0, "Erro: Esperado 0 para string com espaços, mas obteve %d", ft_atoi("   "));
 }
 
+Test(ft_atoi, lib_tests) {
+    for (int i = -1000; i < 1000; i++) {
+        char str[12];
+        sprintf(str, "%d", i);
+        cr_assert_eq(ft_atoi(str), atoi(str), 
+                     "Erro: Esperado %d para a string %s, mas obteve %d", atoi(str), str, ft_atoi(str));
+    }
+}
