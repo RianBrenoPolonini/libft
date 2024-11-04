@@ -28,8 +28,8 @@ Essas são funções da biblioteca padrão C que você deve recriar com o prefix
 
 Para as funções que utilizam **`malloc`**:
 
-- [ ] `ft_calloc` — Aloca memória e inicializa todos os bytes com zero.
-- [ ] `ft_strdup` — Duplica uma string.
+- [X] `ft_calloc` — Aloca memória e inicializa todos os bytes com zero.
+- [X] `ft_strdup` — Duplica uma string.
 
 ---
 
