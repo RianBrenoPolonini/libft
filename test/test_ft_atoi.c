@@ -6,7 +6,7 @@
 /*   By: rfaria-p <rfaria-p@student.42.rio>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/04 07:08:29 by rfaria-p          #+#    #+#             */
-/*   Updated: 2024/11/04 07:13:06 by rfaria-p         ###   ########.fr       */
+/*   Updated: 2024/11/04 07:16:10 by rfaria-p         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -51,10 +51,6 @@ Test(ft_atoi, int_limits_tests) {
     cr_assert_eq(ft_atoi("-2147483648"), -2147483648, "Erro: Esperado -2147483648, mas obteve %d", ft_atoi("-2147483648"));
 }
 
-// Test(ft_atoi, overflow_tests) {
-//     cr_assert_eq(ft_atoi("2147483648"), 2147483647, "Erro: Esperado INT_MAX, mas obteve %d", ft_atoi("2147483648"));
-//     cr_assert_eq(ft_atoi("-2147483649"), -2147483648, "Erro: Esperado INT_MIN, mas obteve %d", ft_atoi("-2147483649"));
-// }
 
 Test(ft_atoi, empty_string) {
     cr_assert_eq(ft_atoi(""), 0, "Erro: Esperado 0 para string vazia, mas obteve %d", ft_atoi(""));
