@@ -24,7 +24,7 @@ Essas são funções da biblioteca padrão C que você deve recriar com o prefix
 - [X] `ft_memchr` — Pesquisa um valor em um bloco de memória.
 - [X] `ft_memcmp` — Compara blocos de memória.
 - [X] `ft_strnstr` — Localiza uma substring dentro de outra, com limite de tamanho.
-- [ ] `ft_atoi` — Converte uma string em um inteiro.
+- [X] `ft_atoi` — Converte uma string em um inteiro.
 
 Para as funções que utilizam **`malloc`**:
 
