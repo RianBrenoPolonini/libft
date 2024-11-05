@@ -46,8 +46,8 @@ Essas funções são adicionais e não fazem parte diretamente da LibC:
 - [X] `ft_striteri` — Aplica uma função a cada caractere de uma string (modificável).
 - [X] `ft_putchar_fd` — Escreve um caractere em um file descriptor.
 - [X] `ft_putstr_fd` — Escreve uma string em um file descriptor.
-- [ ] `ft_putendl_fd` — Escreve uma string seguida de uma nova linha em um file descriptor.
-- [ ] `ft_putnbr_fd` — Escreve um número inteiro em um file descriptor.
+- [X] `ft_putendl_fd` — Escreve uma string seguida de uma nova linha em um file descriptor.
+- [X] `ft_putnbr_fd` — Escreve um número inteiro em um file descriptor.
 
 ---
 
