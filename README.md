@@ -37,9 +37,9 @@ Para as funções que utilizam **`malloc`**:
 
 Essas funções são adicionais e não fazem parte diretamente da LibC:
 
-- [ ] `ft_substr` — Cria uma substring de uma string.
-- [ ] `ft_strjoin` — Concatena duas strings em uma nova string.
-- [ ] `ft_strtrim` — Remove caracteres especificados do início e do fim de uma string.
+- [X] `ft_substr` — Cria uma substring de uma string.
+- [X] `ft_strjoin` — Concatena duas strings em uma nova string.
+- [X] `ft_strtrim` — Remove caracteres especificados do início e do fim de uma string.
 - [ ] `ft_split` — Divide uma string em um array de strings com base em um delimitador.
 - [ ] `ft_itoa` — Converte um número inteiro para uma string.
 - [ ] `ft_strmapi` — Aplica uma função a cada caractere de uma string, criando uma nova string.

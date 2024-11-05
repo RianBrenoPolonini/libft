@@ -1,30 +1,32 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strnstr.c                                       :+:      :+:    :+:   */
+/*   ft_strjoin.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: rfaria-p <rfaria-p@student.42.rio>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/11/03 11:36:27 by rfaria-p          #+#    #+#             */
-/*   Updated: 2024/11/05 12:40:00 by rfaria-p         ###   ########.fr       */
+/*   Created: 2024/11/05 12:35:36 by rfaria-p          #+#    #+#             */
+/*   Updated: 2024/11/05 12:37:29 by rfaria-p         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-char	*ft_strnstr(const char *big, const char *little, size_t len)
+char	*ft_strjoin(char const *s1, char const *s2)
 {
-	size_t	little_len;
+	char	*str;
+	size_t	s1_len;
+	size_t	s2_len;
 
-	if (!*little)
-		return ((char *)big);
-	little_len = ft_strlen(little);
-	while (*big && len >= little_len)
-	{
-		if (*big == *little && !ft_strncmp(big, little, little_len))
-			return ((char *)big);
-		big++;
-		len--;
-	}
-	return (NULL);
+	if (!s1 || !s2)
+		return (NULL);
+	s1_len = ft_strlen(s1);
+	s2_len = ft_strlen(s2);
+	str = (char *)malloc(s1_len + s2_len + 1);
+	if (!str)
+		return (NULL);
+	ft_memcpy(str, s1, s1_len);
+	ft_memcpy(str + s1_len, s2, s2_len);
+	str[s1_len + s2_len] = '\0';
+	return (str);
 }
