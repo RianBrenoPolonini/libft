@@ -6,27 +6,18 @@
 /*   By: rfaria-p <rfaria-p@student.42.rio>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/05 12:47:19 by rfaria-p          #+#    #+#             */
-/*   Updated: 2024/11/05 12:57:56 by rfaria-p         ###   ########.fr       */
+/*   Updated: 2024/11/05 14:16:45 by rfaria-p         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-static int	char_is_in_set(char c, const char *charset)
+static int	char_is_in_set(char c, char charset)
 {
-	int	i;
-
-	i = 0;
-	while (charset[i])
-	{
-		if (charset[i] == c)
-			return (1);
-		i++;
-	}
-	return (0);
+	return (c == charset);
 }
 
-static int	count_words(const char *str, const char *charset)
+static int	count_words(char const *str, char charset)
 {
 	int	count;
 	int	i;
@@ -47,7 +38,7 @@ static int	count_words(const char *str, const char *charset)
 	return (count);
 }
 
-static char	*get_next_segment(const char *str, int *index, const char *charset)
+static char	*get_next_segment(char const *str, int *index, char charset)
 {
 	int		start;
 	int		segment_length;
@@ -65,14 +56,14 @@ static char	*get_next_segment(const char *str, int *index, const char *charset)
 	return (ft_substr(str, start, segment_length));
 }
 
-char	**ft_split(const char *str, const char *charset)
+char	**ft_split(char const *s, char c)
 {
 	int		word_count;
 	char	**result;
 	int		index;
 	int		i;
 
-	word_count = count_words(str, charset);
+	word_count = count_words(s, c);
 	result = (char **)malloc((word_count + 1) * sizeof(char *));
 	i = 0;
 	index = 0;
@@ -80,7 +71,7 @@ char	**ft_split(const char *str, const char *charset)
 		return (NULL);
 	while (i < word_count)
 	{
-		result[i] = get_next_segment(str, &index, charset);
+		result[i] = get_next_segment(s, &index, c);
 		if (!result[i])
 		{
 			while (i > 0)
