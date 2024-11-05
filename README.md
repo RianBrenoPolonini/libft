@@ -43,9 +43,9 @@ Essas funções são adicionais e não fazem parte diretamente da LibC:
 - [X] `ft_split` — Divide uma string em um array de strings com base em um delimitador.
 - [X] `ft_itoa` — Converte um número inteiro para uma string.
 - [X] `ft_strmapi` — Aplica uma função a cada caractere de uma string, criando uma nova string.
-- [ ] `ft_striteri` — Aplica uma função a cada caractere de uma string (modificável).
-- [ ] `ft_putchar_fd` — Escreve um caractere em um file descriptor.
-- [ ] `ft_putstr_fd` — Escreve uma string em um file descriptor.
+- [X] `ft_striteri` — Aplica uma função a cada caractere de uma string (modificável).
+- [X] `ft_putchar_fd` — Escreve um caractere em um file descriptor.
+- [X] `ft_putstr_fd` — Escreve uma string em um file descriptor.
 - [ ] `ft_putendl_fd` — Escreve uma string seguida de uma nova linha em um file descriptor.
 - [ ] `ft_putnbr_fd` — Escreve um número inteiro em um file descriptor.
 
