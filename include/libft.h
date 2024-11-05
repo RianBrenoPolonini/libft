@@ -6,7 +6,7 @@
 /*   By: rfaria-p <rfaria-p@student.42.rio>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/01 03:51:53 by rfaria-p          #+#    #+#             */
-/*   Updated: 2024/11/05 12:45:48 by rfaria-p         ###   ########.fr       */
+/*   Updated: 2024/11/05 13:05:51 by rfaria-p         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -39,6 +39,8 @@ char	*ft_strdup(const char *s);
 char	*ft_substr(char const *s, unsigned int start, size_t len);
 char	*ft_strjoin(char const *s1, char const *s2);
 char	*ft_strtrim(char const *s1, char const *set);
+char	**ft_split(char const *str, char const *charset);
+char	*ft_itoa(int n);
 
 void	*ft_memset(void *s, int c, size_t n);
 void	ft_bzero(void *s, size_t n);

@@ -40,8 +40,8 @@ Essas funções são adicionais e não fazem parte diretamente da LibC:
 - [X] `ft_substr` — Cria uma substring de uma string.
 - [X] `ft_strjoin` — Concatena duas strings em uma nova string.
 - [X] `ft_strtrim` — Remove caracteres especificados do início e do fim de uma string.
-- [ ] `ft_split` — Divide uma string em um array de strings com base em um delimitador.
-- [ ] `ft_itoa` — Converte um número inteiro para uma string.
+- [X] `ft_split` — Divide uma string em um array de strings com base em um delimitador.
+- [X] `ft_itoa` — Converte um número inteiro para uma string.
 - [ ] `ft_strmapi` — Aplica uma função a cada caractere de uma string, criando uma nova string.
 - [ ] `ft_striteri` — Aplica uma função a cada caractere de uma string (modificável).
 - [ ] `ft_putchar_fd` — Escreve um caractere em um file descriptor.
